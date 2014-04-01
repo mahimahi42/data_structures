@@ -1,12 +1,11 @@
 class Node
     attr_reader :value
-    attr_accessor :parent, :children
+    attr_accessor :parent, :left, :right
 
-    def initialize(value = 0, parent = nil, children = nil)
+    def initialize(value = 0, parent = nil, left = nil, right = nil)
         @value = value
         @parent = parent
-        if children.nil? then @children = []
-        else @children = children
-        end
+        @left = left
+        @right = right
     end
 end
