@@ -8,4 +8,8 @@ class Node
         @left = left
         @right = right
     end
+
+    def to_s
+        @value
+    end
 end

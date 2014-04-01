@@ -64,10 +64,17 @@ def depth_first_search(tree, target)
     return nil
 end
 
+def dfs_rec(tree, target)
+    if tree.value.eql? target then 
+        return tree
+    else
+        dfs_rec(tree.left, target) unless tree.left.nil?
+        dfs_rec(tree.right, target) unless tree.right.nil?
+    end
+end
+
 arr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]
 tree = build_tree(arr)
 
-print_tree(tree)
-
-node = depth_first_search(tree, 23)
-puts node.value
+node = dfs_rec(tree, 23)
+puts node.to_s
